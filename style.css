@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
+
+:root {
+  /* Typography */
+  --num-font: "Manrope", sans-serif;
+  --text-font: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+button {
+  outline: none;
+  padding: 0.8375rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: rgb(191, 191, 191);
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  padding: 5rem;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.count-title {
+  font-family: var(--text-font);
+  font-size: 40px;
+}
+
+.counter-value {
+  font-family: var(--num-font);
+  font-size: 32px;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.count-up {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  font-family: var(--text-font);
+  font-size: 18px;
+}
+
+.count-down {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  font-family: var(--text-font);
+  font-size: 18px;
+}
+
+.reset-count {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  font-family: var(--text-font);
+  font-size: 18px;
+}
+
+.negative {
+  color: rgb(218, 56, 56);
+}
+
+.positive {
+  color: rgb(1, 255, 1);
+}
+
+.zero {
+  color: black;
+}
+
+@media screen and (max-width: 500px) {
+  .counter-container {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .counter-container {
+    padding: 1rem;
+  }
+  .count-title {
+    font-size: 28px;
+  }
+  .counter-value {
+    font-size: 24px;
+  }
+  .count-up,
+  .count-down,
+  .reset-count {
+    font-size: 14px;
+  }
+}
